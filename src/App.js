@@ -1,18 +1,17 @@
 import React from 'react'
-import store from './store';
+import {useDispatch,useSelector} from 'react-redux'
+import {incNumber,decNumber} from './actions/index'
 const App = () => {
-  const initialValue=0;
-  const increament=()=>{
-   //dispatch
-  }
-  const decreament=()=>{
-
-  }
+  //dispatch action ko trigger ya call krega fir command reducer ko jaega
+  const dispatch=useDispatch()
+//store se data lene k liye useSelector
+  const myState=useSelector((state)=>state.changeTheNumber)
+  
   return (
     <>
-      <h1>{initialValue}</h1>
-      <button onClick={increament} >Increament</button>
-      <button onClick={decreament}>Decreament</button>
+      <input type='text' value={myState} />
+      <button onClick={()=> dispatch(incNumber(10))}>Increament</button>
+      <button onClick={()=> dispatch(decNumber())}>Decreament</button>
     </>
   )
 }

@@ -1,9 +1,10 @@
-const incNum=()=>{
+ export const incNumber=(value)=>{
     return{
-        type:"INCREAMENT"
+        type:"INCREAMENT",
+        payloadValue:value
     }
 }
-const decNum=()=>{
+ export const decNumber=()=>{
     return{
         type:"DECREAMENT"
     }
