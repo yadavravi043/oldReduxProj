@@ -1,4 +1,5 @@
 import React from 'react'
+import store from './store';
 const App = () => {
   const initialValue=0;
   const increament=()=>{
